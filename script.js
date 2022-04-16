@@ -42,6 +42,7 @@ function generateRandomPic(){
 fetch("https://api.nasa.gov/planetary/apod?api_key=OGGhfFHQHpzBVS73KbHDGu7I0Bs8uZYpONUhT7Hh&count=1")
     .then(res => res.json())
     .then(data => {
+        document.querySelector("h2").innerText = ""
         document.querySelector("img").src =  data[0].url
         if(data[0].copyright != undefined){
             document.querySelector("#photoAuthor").innerText = data[0].copyright + "\n"
